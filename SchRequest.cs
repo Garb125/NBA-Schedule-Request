@@ -16,6 +16,28 @@ namespace NBA_Schedule_Request
         
         static readonly HttpClient client = new HttpClient(handler);
 
+        static async Task Main()
+        {
+            await GetSchedule()
+
+            Console.read();
+        }
+
+        staic async Task GetSchedule()
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync("https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json")
+                var responseBody = await response.Content.ReadAsStringAsync();
+            }
+            catch (HttpRequestException e)
+            {
+                
+                System.Console.WriteLine("\nException Caught!" );
+            }
+            
+        }
+
     }
 
 }
