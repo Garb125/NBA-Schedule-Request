@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Data;
 using System.Collections.Generic;
-using System.Text.Json
+using System.Text.Json;
 
 namespace NBA_Schedule_Request
 {
@@ -18,16 +18,16 @@ namespace NBA_Schedule_Request
 
         static async Task Main()
         {
-            await GetSchedule()
+            await GetSchedule();
 
-            Console.read();
+            Console.Read();
         }
 
-        staic async Task GetSchedule()
+        static async Task GetSchedule()
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync("https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json")
+                HttpResponseMessage response = await client.GetAsync("https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json");
                 var responseBody = await response.Content.ReadAsStringAsync();
             }
             catch (HttpRequestException e)

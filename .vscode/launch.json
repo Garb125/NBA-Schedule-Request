@@ -3,5 +3,17 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+    {
+        "name": ".NET Core Launch (console)",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build",
+        "program": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\bin\\Debug\\netcoreapp5.0\\NBA Schedule Request.dll",
+        "args": [],
+        "cwd": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request",
+        "stopAtEntry": false,
+        "console": "internalConsole"
+    }
+    ]
 }

@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace NBA_Schedule_Request
 {
      public class Meta
@@ -184,7 +187,7 @@ namespace NBA_Schedule_Request
         public string leagueId { get; set; }
         public IList<GameDate> gameDates { get; set; }
         public IList<Week> weeks { get; set; }
-        public IList<BroadcasterList> broadcasterList { get; set; }
+        //public IList<BroadcasterList> broadcasterList { get; set; }
     }
 
     public class Schedule
