@@ -29,11 +29,26 @@ namespace NBA_Schedule_Request
             {
                 HttpResponseMessage response = await client.GetAsync("https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json");
                 var responseBody = await response.Content.ReadAsStringAsync();
+                Schedule schedule = JsonSerializer.Deserialize<Schedule>(responseBody);
+                Console.WriteLine(schedule.leagueSchedule.seasonYear);
+                //Console.WriteLine(schedule.leagueSchedule.gameDates[0].games[0].homeTeam.teamName);
+
+                foreach (var gmDate in schedule.leagueSchedule.gameDates)
+                {
+                    System.Console.WriteLine(gmDate.gameDate);
+                    foreach (var match in gmDate.games)
+                    {
+                        System.Console.WriteLine($"{match.homeTeam.teamName} vs. {match.awayTeam.teamName}");
+                    }
+                    //System.Console.WriteLine(team.gameDate);
+                    //System.Console.WriteLine($"{team.homeTeam.teamName} vs. {team.awayTeam.teamName}");
+                }
+
             }
             catch (HttpRequestException e)
             {
                 
-                System.Console.WriteLine("\nException Caught!" );
+                System.Console.WriteLine("\nException Caught!", e.Message );
             }
             
         }
