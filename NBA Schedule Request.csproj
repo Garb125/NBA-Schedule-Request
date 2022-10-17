@@ -6,7 +6,6 @@
     <RootNamespace>NBA_Schedule_Request</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Oracle.EntityFrameworkCore" Version="6.21.61" />
   </ItemGroup>
 
 </Project>

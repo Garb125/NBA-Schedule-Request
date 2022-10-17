@@ -18,7 +18,8 @@ namespace NBA_Schedule_Request
 
         static async Task Main()
         {
-            await GetSchedule();
+            //await GetSchedule();
+            await GetStats();
 
             Console.Read();
         }
@@ -51,6 +52,37 @@ namespace NBA_Schedule_Request
                 System.Console.WriteLine("\nException Caught!", e.Message );
             }
             
+        }
+
+        static async Task GetStats()
+        {
+            client.DefaultRequestHeaders.Accept.ParseAdd("application/json, text/plain,");
+            client.DefaultRequestHeaders.AcceptEncoding.ParseAdd("gzip, deflate, br");
+            client.DefaultRequestHeaders.AcceptLanguage.ParseAdd("en-US,en;q=0.9");
+            client.DefaultRequestHeaders.Add("Origin", "https://www.nba.com");
+            client.DefaultRequestHeaders.Add("Referer", "https://www.nba.com/");
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; AcmeInc/1.0)");
+
+            try
+            {
+                //HttpResponseMessage response = await client.GetAsync("https://stats.nba.com/stats/leaguegamefinder?Conference=&DateFrom=&DateTo=&Division=&DraftNumber=&DraftRound=&DraftYear=&GB=N&LeagueID=00&Location=&Outcome=&PlayerID=406&PlayerOrTeam=P&Season=&SeasonType=&StatCategory=PTS&TeamID=&VsConference=&VsDivision=&VsTeamID=&gtPTS=40");
+                HttpResponseMessage response = await client.GetAsync("https://stats.nba.com/stats/playerindex?College=&Country=&DraftPick=&DraftRound=&DraftYear=&Height=&Historical=1&LeagueID=00&Season=2021-22&SeasonType=Regular%20Season&TeamID=0&Weight=");
+                var responseBody = await response.Content.ReadAsStringAsync();
+                Depot stats = JsonSerializer.Deserialize<Depot>(responseBody);
+                //rData = stats;
+
+                Console.WriteLine(stats.resultSets[0].rowSet[1][0]);
+                Console.WriteLine(stats.resultSets[0].headers[2]);
+                //Console.Read();                
+                                
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message :{0} ", e.Message);             
+                                
+            }
+
         }
 
     }
