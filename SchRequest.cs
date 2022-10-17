@@ -55,7 +55,7 @@ namespace NBA_Schedule_Request
         }
 
         static async Task GetStats()
-        {
+        { 
             client.DefaultRequestHeaders.Accept.ParseAdd("application/json, text/plain,");
             client.DefaultRequestHeaders.AcceptEncoding.ParseAdd("gzip, deflate, br");
             client.DefaultRequestHeaders.AcceptLanguage.ParseAdd("en-US,en;q=0.9");
