@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Collections.Generic;
 using System.Text.Json;
+using HtmlAgilityPack;
 
 namespace NBA_Schedule_Request
 {
@@ -19,7 +20,9 @@ namespace NBA_Schedule_Request
         static async Task Main()
         {
             //await GetSchedule();
-            await GetStats();
+            //await GetStats();
+
+            await GetTeamProfile();
 
             Console.Read();
         }
@@ -83,6 +86,29 @@ namespace NBA_Schedule_Request
                                 
             }
 
+        }
+
+        static async Task GetTeamProfile()
+        {
+            string url = "https://www.nba.com/team/1610612752";
+            HtmlWeb web = new HtmlWeb();
+            var htmlDoc = new HtmlDocument();
+            htmlDoc =  web.Load(url);
+
+            //var node = htmlDoc.DocumentNode.SelectSingleNode("//dt[1]");
+
+            var headers = htmlDoc.DocumentNode.SelectNodes("//dt");
+            var tmData = htmlDoc.DocumentNode.SelectNodes("//dd");
+
+            int indx = 0;
+        
+            foreach (var header in headers)
+            {
+            
+                Console.WriteLine($"{header.InnerHtml} - {tmData[indx].InnerHtml}");
+                indx++;
+            
+            }
         }
 
     }

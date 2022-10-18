@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {}
+    "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {}
   },
   "projects": {
-    "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {
+    "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
+        "projectUniqueName": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
         "projectName": "NBA Schedule Request",
-        "projectPath": "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
+        "projectPath": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
         "packagesPath": "C:\\Users\\gnjg1\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\obj\\",
+        "outputPath": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gnjg1\\AppData\\Roaming\\NuGet\\NuGet.Config"
