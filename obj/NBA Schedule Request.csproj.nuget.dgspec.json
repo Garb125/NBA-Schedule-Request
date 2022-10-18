@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {}
+    "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {
+    "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
+        "projectUniqueName": "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
         "projectName": "NBA Schedule Request",
-        "projectPath": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
+        "projectPath": "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
         "packagesPath": "C:\\Users\\gnjg1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\obj\\",
+        "outputPath": "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gnjg1\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net6.0": {
           "targetAlias": "netcoreapp6.0",
           "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.46, )"
+            },
             "IronXL.Excel": {
               "target": "Package",
               "version": "[2022.9.9454, )"
