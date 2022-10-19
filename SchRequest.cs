@@ -19,9 +19,9 @@ namespace NBA_Schedule_Request
 
         static async Task Main()
         {
-            GetTeamProfile();
-
-            Console.Read();
+            //GetTeamProfile();
+            await GetSchedule();
+            //Console.Read();
         }
 
         static async Task GetSchedule()
