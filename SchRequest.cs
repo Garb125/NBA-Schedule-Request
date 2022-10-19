@@ -40,6 +40,7 @@ namespace NBA_Schedule_Request
                     foreach (var match in gmDate.games)
                     {
                         System.Console.WriteLine($"{match.homeTeam.teamName} vs. {match.awayTeam.teamName}");
+                        System.Console.WriteLine($"Match Code: {match.gameCode}" );
                     }
                     //System.Console.WriteLine(team.gameDate);
                     //System.Console.WriteLine($"{team.homeTeam.teamName} vs. {team.awayTeam.teamName}");
