@@ -19,10 +19,7 @@ namespace NBA_Schedule_Request
 
         static async Task Main()
         {
-            //await GetSchedule();
-            //await GetStats();
-
-            await GetTeamProfile();
+            GetTeamProfile();
 
             Console.Read();
         }
@@ -88,7 +85,7 @@ namespace NBA_Schedule_Request
 
         }
 
-        static async Task GetTeamProfile()
+        static void  GetTeamProfile()
         {
             string url = "https://www.nba.com/team/1610612752";
             HtmlWeb web = new HtmlWeb();
