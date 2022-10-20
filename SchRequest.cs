@@ -25,7 +25,7 @@ namespace NBA_Schedule_Request
             //GetTeamProfile();
             //await GetSchedule();
             await GetStats();
-            WriteStats();
+            //WriteStats();
             //Console.Read();
         }
 
