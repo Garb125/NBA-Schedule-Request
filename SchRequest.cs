@@ -5,6 +5,7 @@ using System.Data;
 using System.Collections.Generic;
 using System.Text.Json;
 using HtmlAgilityPack;
+using IronXL;
 
 namespace NBA_Schedule_Request
 {
@@ -17,10 +18,14 @@ namespace NBA_Schedule_Request
         
         static readonly HttpClient client = new HttpClient(handler);
 
+        static Depot rData;
+
         static async Task Main()
         {
             //GetTeamProfile();
-            await GetSchedule();
+            //await GetSchedule();
+            await GetStats();
+            WriteStats();
             //Console.Read();
         }
 
@@ -67,13 +72,22 @@ namespace NBA_Schedule_Request
             try
             {
                 //HttpResponseMessage response = await client.GetAsync("https://stats.nba.com/stats/leaguegamefinder?Conference=&DateFrom=&DateTo=&Division=&DraftNumber=&DraftRound=&DraftYear=&GB=N&LeagueID=00&Location=&Outcome=&PlayerID=406&PlayerOrTeam=P&Season=&SeasonType=&StatCategory=PTS&TeamID=&VsConference=&VsDivision=&VsTeamID=&gtPTS=40");
-                HttpResponseMessage response = await client.GetAsync("https://stats.nba.com/stats/playerindex?College=&Country=&DraftPick=&DraftRound=&DraftYear=&Height=&Historical=1&LeagueID=00&Season=2021-22&SeasonType=Regular%20Season&TeamID=0&Weight=");
+                //HttpResponseMessage response = await client.GetAsync("https://stats.nba.com/stats/playerindex?College=&Country=&DraftPick=&DraftRound=&DraftYear=&Height=&Historical=1&LeagueID=00&Season=2021-22&SeasonType=Regular%20Season&TeamID=0&Weight=");
+                HttpResponseMessage response = await client.GetAsync("https://stats.nba.com/stats/leaguedashteamstats?Conference=&DateFrom=&DateTo=&Division=&GameScope=&GameSegment=&Height=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2021-22&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&StarterBench=&TeamID=0&TwoWay=0&VsConference=&VsDivision=");
                 var responseBody = await response.Content.ReadAsStringAsync();
                 Depot stats = JsonSerializer.Deserialize<Depot>(responseBody);
-                //rData = stats;
+                rData = stats;
 
-                Console.WriteLine(stats.resultSets[0].rowSet[1][0]);
-                Console.WriteLine(stats.resultSets[0].headers[2]);
+                //Console.WriteLine(stats.resultSets[0].rowSet[1][0]);
+                //Console.WriteLine(stats.resultSets[0].headers[2]);
+                Console.WriteLine(stats.resultSets[0].rowSet[0][1]);
+
+                /*foreach(var stat in stats.resultSets[0].rowSet)
+                {
+                    Console.WriteLine($"Name: {stat[1]} - Id {stat[0]}" );
+                    //System.Console.WriteLine(stat);
+                } 
+                */
                 //Console.Read();                
                                 
             }
@@ -107,6 +121,29 @@ namespace NBA_Schedule_Request
                 indx++;
             
             }
+        }
+
+        static void WriteStats()
+        {
+            WorkBook firstBook = WorkBook.Create(ExcelFileFormat.XLSX);
+            WorkSheet sheet = firstBook.DefaultWorkSheet;
+
+            IList<IList<object>> data = rData.resultSets[0].rowSet;
+
+            int col = 1;
+            int row = 2;
+
+            foreach (var statline in data)
+            {
+                
+                sheet.SetCellValue(row, col, statline[1]);
+                sheet.SetCellValue(row, col, statline[0]);
+                //Console.WriteLine(stat);
+                row++;
+            }
+
+            firstBook.SaveAs("Teams.xlsx");
+            Console.WriteLine("Stats Written");
         }
 
     }
