@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text.Json;
 using HtmlAgilityPack;
 using IronXL;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace NBA_Schedule_Request
 {
@@ -22,9 +23,9 @@ namespace NBA_Schedule_Request
 
         static async Task Main()
         {
-            //GetTeamProfile();
+            GetTeamProfile();
             //await GetSchedule();
-            await GetStats();
+            //await GetStats();
             //WriteStats();
             //Console.Read();
         }
@@ -97,35 +98,79 @@ namespace NBA_Schedule_Request
                 Console.WriteLine("Message :{0} ", e.Message);             
                                 
             }
+            WriteStats();
 
         }
 
         static void  GetTeamProfile()
         {
-            string url = "https://www.nba.com/team/1610612752";
+            
             HtmlWeb web = new HtmlWeb();
             var htmlDoc = new HtmlDocument();
-            htmlDoc =  web.Load(url);
+            //htmlDoc =  web.Load(url);
 
+            WorkBook firstBook = WorkBook.Load("Teams2.xlsx");
+            WorkSheet sheet = firstBook.DefaultWorkSheet;
+            IronXL.Range teamIds = sheet.GetRange("C3:C32");
+
+            int col = 4;
+            int row = 2;
+
+            foreach (var item in teamIds)
+            {
+                string url = $"https://www.nba.com/team/{item.StringValue}";
+                htmlDoc = web.Load(url);
+              
+                var headers = htmlDoc.DocumentNode.SelectNodes("//dt");
+                var tmData = htmlDoc.DocumentNode.SelectNodes("//dd");
+
+                try
+                {
+                    string tmCity = tmData[1].InnerHtml;
+                    string tmArena = tmData[2].InnerHtml;
+                    string tmOwner = tmData[4].InnerHtml;
+                    string tmGm = tmData[5].InnerHtml;
+                    string tmCoach = tmData[6].InnerHtml;
+
+                    sheet.SetCellValue(row, col, tmCity);
+                    sheet.SetCellValue(row, col + 2, tmArena);
+                    sheet.SetCellValue(row, col + 3, tmOwner);
+                    sheet.SetCellValue(row, col + 4, tmGm);
+                    sheet.SetCellValue(row, col + 5, tmCoach);
+
+                    Console.WriteLine(url);
+                    
+                }
+                catch (Exception)
+                {
+
+                    continue;
+                }
+                row++;
+            }
+            firstBook.Save();
             //var node = htmlDoc.DocumentNode.SelectSingleNode("//dt[1]");
 
-            var headers = htmlDoc.DocumentNode.SelectNodes("//dt");
-            var tmData = htmlDoc.DocumentNode.SelectNodes("//dd");
+            //sheet.SetCellValue(2,4, tmCity);
 
-            int indx = 0;
+            /*int indx = 0;
         
-            foreach (var header in headers)
+            foreach (var value in tmData)
             {
             
-                Console.WriteLine($"{header.InnerHtml} - {tmData[indx].InnerHtml}");
+                Console.WriteLine($"{tmData[indx].InnerHtml}");
                 indx++;
             
             }
+            */
+
+            //Console.WriteLine(url);
+            Console.WriteLine("Stats Written");
         }
 
         static void WriteStats()
         {
-            WorkBook firstBook = WorkBook.Create(ExcelFileFormat.XLSX);
+            WorkBook firstBook = WorkBook.Load("Teams.xlsx");
             WorkSheet sheet = firstBook.DefaultWorkSheet;
 
             IList<IList<object>> data = rData.resultSets[0].rowSet;
@@ -133,16 +178,21 @@ namespace NBA_Schedule_Request
             int col = 1;
             int row = 2;
 
+            sheet.SetCellValue(1, 1, "Test");
+
             foreach (var statline in data)
             {
-                
-                sheet.SetCellValue(row, col, statline[1]);
-                sheet.SetCellValue(row, col, statline[0]);
-                //Console.WriteLine(stat);
+                string tmName = statline[1].ToString();
+                string tmId = statline[0].ToString();
+
+                sheet.SetCellValue(row, col, tmName);
+                Console.WriteLine(tmName);
+                sheet.SetCellValue(row, col+1, tmId);
+                Console.WriteLine(statline[0]);
                 row++;
             }
 
-            firstBook.SaveAs("Teams.xlsx");
+            firstBook.SaveAs("Teams2.xlsx");
             Console.WriteLine("Stats Written");
         }
 

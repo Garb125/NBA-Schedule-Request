@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {}
+    "C:\\Users\\GG-Code\\source\\repos\\Garb125\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {
+    "C:\\Users\\GG-Code\\source\\repos\\Garb125\\NBA-Schedule-Request\\NBA Schedule Request.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
+        "projectUniqueName": "C:\\Users\\GG-Code\\source\\repos\\Garb125\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
         "projectName": "NBA Schedule Request",
-        "projectPath": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
-        "packagesPath": "C:\\Users\\gnjg1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\obj\\",
+        "projectPath": "C:\\Users\\GG-Code\\source\\repos\\Garb125\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
+        "packagesPath": "C:\\Users\\GG-Code\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\GG-Code\\source\\repos\\Garb125\\NBA-Schedule-Request\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gnjg1\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\GG-Code\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
