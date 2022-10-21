@@ -9,11 +9,12 @@
         "type": "coreclr",
         "request": "launch",
         "preLaunchTask": "build",
-        "program": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\bin\\Debug\\netcoreapp5.0\\NBA Schedule Request.dll",
+        "program": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\bin\\Debug\\netcoreapp6.0\\NBA Schedule Request.dll",
         "args": [],
         "cwd": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request",
         "stopAtEntry": false,
-        "console": "internalConsole"
+        "console": "internalConsole",
+        "requireExactSource": false
     }
     ]
 }

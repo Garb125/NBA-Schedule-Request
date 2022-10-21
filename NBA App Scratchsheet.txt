@@ -1,0 +1,10 @@
+Team Stats Request url:
+https://stats.nba.com/stats/leaguedashteamstats?Conference=&DateFrom=&DateTo=&Division=&GameScope=&GameSegment=&Height=&LastNGames=0
+	&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=
+	&PlayerPosition=&PlusMinus=N&Rank=N&Season=2021-22&SeasonSegment=&SeasonType=Regular Season&ShotClockRange=&StarterBench=&TeamID=0&TwoWay=0&VsConference=&VsDivision=
+
+Team Profile:
+	https://www.nba.com/team/[TeamID]/[TeamName]  ex. https://www.nba.com/team/1610612743/nuggets
+
+Coaches(wiki):
+https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_head_coaches
