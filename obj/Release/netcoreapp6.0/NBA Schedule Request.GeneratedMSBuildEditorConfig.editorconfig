@@ -1,5 +1,5 @@
 is_global = true
-build_property.TargetFramework = netcoreapp5.0
+build_property.TargetFramework = netcoreapp6.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
 build_property.ProjectTypeGuids = 
@@ -7,4 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NBA_Schedule_Request
-build_property.ProjectDir = C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\
+build_property.ProjectDir = C:\Users\GG-Code\source\repos\Garb125\NBA-Schedule-Request\

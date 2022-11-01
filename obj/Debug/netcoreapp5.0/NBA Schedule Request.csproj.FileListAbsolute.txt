@@ -14,3 +14,19 @@ C:\Users\gnjg1\C# Repos\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\NBA Schedul
 C:\Users\gnjg1\C# Repos\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\ref\NBA Schedule Request.dll
 C:\Users\gnjg1\C# Repos\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\NBA Schedule Request.pdb
 C:\Users\gnjg1\C# Repos\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\NBA Schedule Request.genruntimeconfig.cache
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\bin\Debug\netcoreapp5.0\NBA Schedule Request.exe
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\bin\Debug\netcoreapp5.0\NBA Schedule Request.deps.json
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\bin\Debug\netcoreapp5.0\NBA Schedule Request.runtimeconfig.json
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\bin\Debug\netcoreapp5.0\NBA Schedule Request.runtimeconfig.dev.json
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\bin\Debug\netcoreapp5.0\NBA Schedule Request.dll
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\bin\Debug\netcoreapp5.0\NBA Schedule Request.pdb
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\NBA Schedule Request.csproj.AssemblyReference.cache
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\NBA Schedule Request.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\NBA Schedule Request.AssemblyInfoInputs.cache
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\NBA Schedule Request.AssemblyInfo.cs
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\NBA Schedule Request.csproj.CoreCompileInputs.cache
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\NBA Schedule Request.dll
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\refint\NBA Schedule Request.dll
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\NBA Schedule Request.pdb
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\NBA Schedule Request.genruntimeconfig.cache
+C:\Users\GG-Code\Source\Repos\Garb125\NBA-Schedule-Request\obj\Debug\netcoreapp5.0\ref\NBA Schedule Request.dll
