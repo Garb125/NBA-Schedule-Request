@@ -53,3 +53,5 @@ C:\Users\gnjg1\C# Repos\NBA-Schedule-Request\bin\Debug\netcoreapp6.0\runtimes\wi
 C:\Users\gnjg1\C# Repos\NBA-Schedule-Request\bin\Debug\netcoreapp6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\gnjg1\C# Repos\NBA-Schedule-Request\obj\Debug\netcoreapp6.0\NBA Schedule Request.csproj.CopyComplete
 C:\Users\gnjg1\C# Repos\NBA-Schedule-Request\bin\Debug\netcoreapp6.0\HtmlAgilityPack.dll
+C:\Users\gnjg1\C# Repos\NBA-Schedule-Request\obj\Debug\netcoreapp6.0\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\gnjg1\C# Repos\NBA-Schedule-Request\obj\Debug\netcoreapp6.0\NBA Schedule Request.csproj.ResolveComReference.cache

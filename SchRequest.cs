@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text.Json;
 using HtmlAgilityPack;
 using IronXL;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace NBA_Schedule_Request
 {
@@ -19,12 +20,14 @@ namespace NBA_Schedule_Request
         static readonly HttpClient client = new HttpClient(handler);
 
         static Depot rData;
+        static Schedule fullSchedule;
 
         static async Task Main()
         {
             //GetTeamProfile();
-            //await GetSchedule();
-            await GetStats();
+            await GetSchedule();
+            WriteSchedule();
+            //await GetStats();
             //WriteStats();
             //Console.Read();
         }
@@ -38,6 +41,8 @@ namespace NBA_Schedule_Request
                 Schedule schedule = JsonSerializer.Deserialize<Schedule>(responseBody);
                 Console.WriteLine(schedule.leagueSchedule.seasonYear);
                 //Console.WriteLine(schedule.leagueSchedule.gameDates[0].games[0].homeTeam.teamName);
+
+                fullSchedule = schedule;
 
                 foreach (var gmDate in schedule.leagueSchedule.gameDates)
                 {
@@ -57,6 +62,53 @@ namespace NBA_Schedule_Request
                 
                 System.Console.WriteLine("\nException Caught!", e.Message );
             }
+            
+        }
+
+        static void WriteSchedule()
+        {
+            var excelApp = new Excel.Application();
+            excelApp.Visible = true;
+            excelApp.Workbooks.Add();
+            Excel._Worksheet worksheet = excelApp.ActiveSheet;
+            int r = 2;
+            int c = 1;
+
+            IList<GameDate> gmDates = fullSchedule.leagueSchedule.gameDates;
+            
+            //Set Headers
+            worksheet.Cells[1, 1] = "Id";
+            worksheet.Cells[1, 2] = "Name";
+            worksheet.Cells[1, 3] = "Season";
+            worksheet.Cells[1, 4] = "HTeam";
+            worksheet.Cells[1, 5] = "VTeam";
+            worksheet.Cells[1, 6] = "HTScore";
+            worksheet.Cells[1, 7] = "VTScore";
+            worksheet.Cells[1, 8] = "Victor";
+            worksheet.Cells[1, 9] = "Date";
+            worksheet.Cells[1, 10] = "SeasonType";
+
+            //Write Schedule
+            foreach (GameDate gmDate in gmDates)
+            {
+                //worksheet.Cells[2, 9] = gmDate.gameDate;
+                foreach (var match in gmDate.games)
+                {
+                    worksheet.Cells[r, c] = match.gameId;
+                    worksheet.Cells[r, c+1] = match.gameCode;
+                    worksheet.Cells[r, c+2] = "2022-23";
+                    worksheet.Cells[r, c+3] = match.homeTeam.teamId;
+                    worksheet.Cells[r, c+4] = match.awayTeam.teamId;
+                    worksheet.Cells[r, c+5] = match.homeTeam.score;
+                    worksheet.Cells[r, c+6] = match.awayTeam.score;
+                    worksheet.Cells[r, c+7] = "Victor";
+                    worksheet.Cells[r, c+8] = match.gameDateEst;
+                    worksheet.Cells[r, c+9] = "Regular";
+                    r++;
+                }
+                
+            }
+
             
         }
 

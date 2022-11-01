@@ -1710,19 +1710,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
+      "projectUniqueName": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
       "projectName": "NBA Schedule Request",
-      "projectPath": "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
+      "projectPath": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\NBA Schedule Request.csproj",
       "packagesPath": "C:\\Users\\gnjg1\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\obj\\",
+      "outputPath": "C:\\Users\\gnjg1\\C# Repos\\NBA-Schedule-Request\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gnjg1\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\gnjg1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
