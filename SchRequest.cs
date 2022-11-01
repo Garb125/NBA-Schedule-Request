@@ -168,6 +168,13 @@ namespace NBA_Schedule_Request
             int col = 4;
             int row = 2;
 
+            WorkBook firstBook = WorkBook.Load("Teams2.xlsx");
+            WorkSheet sheet = firstBook.DefaultWorkSheet;
+            IronXL.Range teamIds = sheet.GetRange("C3:C32");
+
+            int col = 4;
+            int row = 2;
+
             foreach (var item in teamIds)
             {
                 string url = $"https://www.nba.com/team/{item.StringValue}";
